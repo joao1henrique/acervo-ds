@@ -1,0 +1,77 @@
+.toast {
+  position: fixed;
+  z-index: 50;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(380px, calc(100% - 40px));
+  padding: 12px 12px 12px 14px;
+  border-radius: var(--raio);
+  background: var(--tela);
+  color: var(--branco);
+  box-shadow: var(--sombra);
+  animation: toast-entrada 0.25s ease-out;
+}
+
+@keyframes toast-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.toast-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.toast-sucesso .toast-icon {
+  background: var(--sucesso);
+}
+
+.toast-erro .toast-icon {
+  background: var(--erro);
+}
+
+.toast-info .toast-icon {
+  background: var(--info);
+}
+
+.toast-message {
+  flex: 1;
+  margin: 0;
+}
+
+.toast-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--branco);
+  font-size: 1.4rem;
+}
+
+.toast-close:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+
+/* No celular o aviso ocupa a largura toda, embaixo. */
+@media (max-width: 600px) {
+  .toast {
+    right: 20px;
+    left: 20px;
+    width: auto;
+  }
+}

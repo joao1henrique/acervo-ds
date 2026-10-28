@@ -1,0 +1,135 @@
+/* O corpo do DS aberto: duas telas ligadas por uma dobradiça. */
+.detail {
+  padding: 14px;
+  border-radius: 24px;
+  background: var(--plastico-escuro);
+  box-shadow: var(--sombra);
+}
+
+.detail-top-screen {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 12px;
+  background: var(--tela);
+  color: var(--branco);
+}
+
+.detail-heading {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.detail-heading h2 {
+  font-size: 1.5rem;
+  text-wrap: balance;
+}
+
+.detail-kicker {
+  margin: 0;
+  color: var(--cobalto-claro);
+  font-family: var(--fonte-pixel);
+  font-size: 0.9rem;
+}
+
+.detail-hinge {
+  height: 14px;
+  margin: 10px 18%;
+  border-radius: 999px;
+  background: var(--linha);
+}
+
+.detail-bottom-screen {
+  padding: 6px 18px 18px;
+  border-radius: 12px;
+  background: var(--branco);
+}
+
+.detail-text {
+  margin: 0;
+  max-width: 60ch;
+}
+
+.detail-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.detail-facts dt {
+  color: var(--tinta-suave);
+  font-size: 0.85rem;
+}
+
+.detail-facts dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.detail-progress {
+  display: grid;
+  gap: 16px;
+}
+
+.detail-progress-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botões usados no detalhe. */
+.button-primary,
+.button-secondary,
+.button-favorite {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.button-primary {
+  border: 0;
+  background: var(--cobalto);
+  color: var(--branco);
+}
+
+.button-primary:hover {
+  background: var(--cobalto-escuro);
+}
+
+.button-secondary {
+  border: 1px solid var(--linha);
+  background: var(--branco);
+  color: var(--tinta);
+}
+
+.button-secondary:hover {
+  border-color: var(--tinta-suave);
+}
+
+.button-favorite {
+  border: 1px solid rgb(255 255 255 / 0.35);
+  background: none;
+  color: var(--branco);
+}
+
+.button-favorite.is-favorite {
+  border-color: var(--cobalto);
+  background: var(--cobalto);
+}
+
+@media (max-width: 480px) {
+  .detail-top-screen {
+    grid-template-columns: 90px 1fr;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .detail-heading h2 {
+    font-size: 1.2rem;
+  }
+}

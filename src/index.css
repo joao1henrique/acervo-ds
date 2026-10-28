@@ -1,0 +1,78 @@
+/*
+ * Identidade do Acervo DS: o plástico claro do DS Lite (fundo), o grafite das telas (texto)
+ * e um azul cobalto, cor clássica do console, como única cor de destaque.
+ * Fontes: Bricolage Grotesque nos títulos, Atkinson Hyperlegible no texto (feita para ser
+ * fácil de ler) e Silkscreen, uma fonte de pixel, só nos selos pequenos.
+ */
+:root {
+  --plastico: #f2f0ea;
+  --plastico-escuro: #e4e1d8;
+  --branco: #ffffff;
+  --tinta: #1c1f24;
+  --tinta-suave: #4a4f57;
+  --linha: #d6d2c8;
+  --cobalto: #2348c9;
+  --cobalto-escuro: #1a3699;
+  --cobalto-claro: #e1e7fb;
+  --tela: #22262c;
+  --sucesso: #1f7a4a;
+  --erro: #b3261e;
+  --info: #2348c9;
+
+  --fonte-titulo: 'Bricolage Grotesque', system-ui, sans-serif;
+  --fonte-texto: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --fonte-pixel: 'Silkscreen', ui-monospace, monospace;
+
+  --raio: 14px;
+  --sombra: 0 1px 2px rgb(28 31 36 / 0.08), 0 6px 18px rgb(28 31 36 / 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--plastico);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.1;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Foco sempre visível para quem navega pelo teclado. */
+:focus-visible {
+  outline: 3px solid var(--cobalto);
+  outline-offset: 2px;
+}
+
+/* Texto lido só pelo leitor de tela. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Quem pede menos movimento no sistema não vê animações. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,47 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.pagination-pages {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination-arrow,
+.pagination-page {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background: var(--branco);
+  color: var(--tinta);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pagination-arrow:hover:not(:disabled),
+.pagination-page:hover {
+  border-color: var(--cobalto);
+  color: var(--cobalto);
+}
+
+.pagination-page.is-current {
+  background: var(--cobalto);
+  border-color: var(--cobalto);
+  color: var(--branco);
+}
+
+/* Anterior/Próxima ficam apagados quando não há para onde ir. */
+.pagination-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

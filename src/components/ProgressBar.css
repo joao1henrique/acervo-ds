@@ -1,0 +1,33 @@
+.progress {
+  display: grid;
+  gap: 8px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.progress-value {
+  font-family: var(--fonte-pixel);
+}
+
+.progress-track {
+  height: 16px;
+  border-radius: 999px;
+  background: var(--plastico-escuro);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--cobalto);
+  transition: width 0.4s ease;
+}
+
+/* Jogo zerado: a barra fica verde. */
+.progress-fill.is-complete {
+  background: var(--sucesso);
+}

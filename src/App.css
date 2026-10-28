@@ -1,0 +1,153 @@
+/* Página: largura máxima e respiro nas laterais. */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+.intro {
+  padding: 48px 0 32px;
+}
+
+.intro-kicker {
+  margin: 0 0 12px;
+  color: var(--cobalto);
+  font-family: var(--fonte-pixel);
+  font-size: 0.9rem;
+}
+
+.intro h1 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 1.2rem + 3.5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.intro-text {
+  max-width: 55ch;
+  margin: 16px 0 0;
+  color: var(--tinta-suave);
+  font-size: 1.1rem;
+}
+
+/*
+ * Computador: lista à esquerda e o DS aberto à direita, parado enquanto a lista rola.
+ * Tablet e celular: o DS aberto em cima e a lista embaixo.
+ */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 32px;
+  align-items: start;
+}
+
+.detail-area {
+  position: sticky;
+  top: 84px;
+  scroll-margin-top: 84px;
+}
+
+.catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.catalog-toolbar h2 {
+  font-size: 1.6rem;
+}
+
+.catalog-count {
+  color: var(--tinta-suave);
+  font-family: var(--fonte-pixel);
+  font-size: 1rem;
+}
+
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.faq {
+  max-width: 760px;
+  margin-top: 72px;
+}
+
+.faq h2 {
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+}
+
+.footer {
+  border-top: 1px solid var(--linha);
+  padding: 24px 20px 96px;
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Tablet e celular: uma coluna, com o detalhe antes da lista. */
+@media (max-width: 1023px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .detail-area {
+    position: static;
+    order: -1;
+  }
+}
+
+/* Celular: cards em duas colunas. */
+@media (max-width: 480px) {
+  .intro {
+    padding: 32px 0 24px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  /* Os dois menus dividem a largura da tela. */
+  .catalog-filters {
+    width: 100%;
+  }
+
+  .catalog-filters .dropdown {
+    flex: 1;
+  }
+
+  .catalog-filters .dropdown-button {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 12px;
+  }
+
+  /* O rótulo some da tela, mas o leitor de tela continua lendo. */
+  .catalog-filters .dropdown-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+}

@@ -1,0 +1,64 @@
+.game-card {
+  position: relative;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: var(--branco);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--tinta-suave);
+}
+
+.game-card.is-selected {
+  border-color: var(--cobalto);
+  box-shadow: 0 0 0 2px var(--cobalto);
+}
+
+.game-card-open {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  border: 0;
+  background: none;
+  color: var(--tinta);
+  text-align: left;
+}
+
+.game-card-title {
+  margin-top: 6px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.game-card-meta {
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+}
+
+.game-card-star {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.9);
+  color: var(--tinta-suave);
+  font-size: 1.2rem;
+}
+
+.game-card-star:hover {
+  color: var(--cobalto);
+}
+
+.game-card-star.is-favorite {
+  background: var(--cobalto);
+  color: var(--branco);
+}

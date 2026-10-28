@@ -1,0 +1,59 @@
+.accordion {
+  border-top: 1px solid var(--linha);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--linha);
+}
+
+.accordion-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 4px;
+  border: 0;
+  background: none;
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.accordion-button:hover {
+  color: var(--cobalto);
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* Transição suave: a linha da grade vai de 0 até a altura do conteúdo. */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.is-open .accordion-panel {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content {
+  overflow: hidden;
+}
+
+.accordion-content p {
+  margin: 0 4px 18px;
+  color: var(--tinta-suave);
+  max-width: 65ch;
+}

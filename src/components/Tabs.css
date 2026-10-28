@@ -1,0 +1,30 @@
+.tabs-list {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--linha);
+  overflow-x: auto;
+}
+
+.tabs-button {
+  flex: 1;
+  padding: 12px 8px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--tinta-suave);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tabs-button:hover {
+  color: var(--tinta);
+}
+
+.tabs-button[aria-selected='true'] {
+  border-bottom-color: var(--cobalto);
+  color: var(--cobalto);
+}
+
+.tabs-panel {
+  padding-top: 18px;
+}

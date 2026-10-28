@@ -1,0 +1,43 @@
+/* O formato do cartucho de DS: quase quadrado, com um canto cortado. */
+.cover {
+  position: relative;
+  aspect-ratio: 33 / 35;
+  padding: 8% 8% 18%;
+  border-radius: 8px 22% 8px 8px;
+  background: var(--tela);
+}
+
+.cover-label {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.cover-initials {
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+}
+
+.cover-large .cover-initials {
+  font-size: 3.2rem;
+}
+
+@media (max-width: 480px) {
+  .cover-large .cover-initials {
+    font-size: 2.2rem;
+  }
+}
+
+.cover-tag {
+  position: absolute;
+  bottom: 4%;
+  left: 8%;
+  color: var(--plastico-escuro);
+  font-family: var(--fonte-pixel);
+  font-size: 0.75rem;
+}
